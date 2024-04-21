@@ -1,27 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Center Text in a Div</title>
-<style>
-    .container {
-        width: 300px;
-        height: 200px;
-        background-color: lightgray;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        padding: 10px;
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+            border-radius: 5px;
+            width: 400px;
+            background-color: rgb(150, 220, 220);
+            padding:20px;
+        }
+        h3{
+            background-color: rgb(59, 58, 58);
+            width: 170px;
+            color: aliceblue;
+            font-size: medium;
+        }
+        h2{
+            font-family: sans-serif;
+            color: rgb(7, 7, 7);
+        }
+        button{
+            border: none;
+            border-radius: 4px;
+            height: 23px;
+            padding: 5px;
+        }
+        .head{
+display: flex;
+justify-content: space-evenly;
+        }
+        .tail{
+            display: flex;
+            justify-content: space-between;
+        }
+        .a{
+            display:flex;
+            justify-content: space-evenly;
+        }
+        .b{
+            display:flex;
+            justify-content: space-evenly;
+        }
+        .c{
+            margin-left: 25px;
+            text-align: left;
+        }
+        input[type="text"],[type="date"]
+        {
+        width: 150px;
+        height: 20px;
+        font-size: 10px;
+        margin: 5px;
+        outline: none;
+        }
+        select{
+            width: 150px;
+        height: 20px;
+        font-size: 10px;
+        margin: 5px;
+        outline: none;
+
+        }
+        body{
+            background-image: url('train.jpeg');
+            background-size: cover;
+        }
+    </style>
 </head>
 <body>
-
-<div class="container">
-    <p>This text is centered in the middle of the div.</p>
-</div>
-
+    <center>
+<form>
+    <div class="head">
+    <h3>PNR STATUS</h3>
+    <h3>CHARTS / VACANCY</h3>
+    </div>
+        <h2>BOOK TICKET</h2>
+    <div class="a">
+        <input type="text"placeholder="From"/><br>
+    
+        <input type="date" min="2020-10-14" max="2025-10-14" step="7"><br>
+        <br>
+    </div>
+    <br>
+    <div class="b">
+    <input type="text"placeholder="To"/><br><br>
+    <select>
+        <option>GENERAL</option>
+       <option>Ladies</option>
+       <option>Senior citizens</option>
+       <option>disabled persons</option>
+    </select>
+    </div>
+    <br>
+    <div class="c">
+    <select>
+        <option>All Classes</option>
+        <option>Luxury</option>
+       <option>Bussiness Class</option>
+       <option>Economic Class</option>
+    </select>
+    </div>
+    <input type="checkbox">Person with Disability Concession
+    <input type="checkbox">Flexible with date<br>
+    <input type="checkbox">Train with Available berth
+    <input type="checkbox">Railway pass concesion<br><br>
+    <div class="tail">
+    <button style="background-color: orange;" >Search</button>
+    <button style="background-color: green;">Try booking in Ask DISHA 2.0</button>
+    </div>
+</form>
+</center>
 </body>
 </html>
