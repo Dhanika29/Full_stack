@@ -7,14 +7,8 @@
     <script>
       function f1() {
         let n = t1.value;
-        if (n % 2 == 0) {
-          lbl.innerHTML = "Even Number";
-          lbl.style.color="green"
-          lbl.style.background="yellow"
-        } else {
-          lbl.innerHTML = "Odd Number";
-          lbl.style.color="blue"
-          lbl.style.background="pink"
+        
+          lbl.style.color = n;
         }
       }
     </script>
@@ -22,6 +16,6 @@
   <body>
     <p><input type="text" id="t1" /></p>
     <button onclick="f1()">Submit</button>
-    <p><label id="lbl"></label></p>
+    <p><label id="lbl">hello world </label></p>
   </body>
 </html>
