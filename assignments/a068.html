@@ -7,7 +7,7 @@
 </head>
 <body>
     <script>
-        let input = prompt("Enter the operation you want to perform (+ for addition, - for subtraction, * for multiplication, / for division):");
+        let input = prompt("Enter the operation you want to perform (add for addition, sub for subtraction, multiply for multiplication, divide for division):");
         let num1 = parseInt(prompt("Enter the first number:"));
         let num2 = parseInt(prompt("Enter the second number:"));
 
@@ -26,16 +26,16 @@
         
         let result;
         switch (input){
-            case '+':
+            case 'add':
                 result = add(num1, num2);
                 break;
-            case '-':
+            case 'sub':
                 result = sub(num1, num2);
                 break;
-            case '*':
+            case 'multiply':
                 result = mul(num1, num2);
                 break;
-            case '/':
+            case 'divide':
                 result = div(num1, num2);
                 break;
             default:
