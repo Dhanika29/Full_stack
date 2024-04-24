@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let add = (a, b) => a + b;
+        let sub = (a, b) => a - b;
+        let mul = (a, b) => a * b;
+        let div = (a, b) => {
+            if (b !== 0) {
+                return a / b;
+            } else {
+                return "Cannot divide by zero";
+            }
+        };
+
+        
+        let input = prompt("Enter the operation you want to perform (+ for addition, - for subtraction, * for multiplication, / for division):");
+
+        
+        let num1 = parseInt(prompt("Enter the first number:"));
+        let num2 = parseInt(prompt("Enter the second number:"));
+
+        
+        let result;
+        switch (input){
+            case '+':
+                result = add(num1, num2);
+                break;
+            case '-':
+                result = sub(num1, num2);
+                break;
+            case '*':
+                result = mul(num1, num2);
+                break;
+            case '/':
+                result = div(num1, num2);
+                break;
+            default:
+                result = "Invalid operation";
+        }
+
+        
+        document.write("Result: " + result);
+    </script>
+</body>
+</html>
