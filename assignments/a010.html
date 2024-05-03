@@ -1,0 +1,27 @@
+function isPrime(number) {
+    if (number <= 1) {
+        return false;
+    }
+    for (var i = 2; i <= Math.sqrt(number); i++) {
+        if (number % i === 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+function findPrimes(a, b) {
+    var primeNumbers = [];
+    for (var i = a; i <= b; i++) {
+        if (isPrime(i)) {
+            primeNumbers.push(i);
+        }
+    }
+    return primeNumbers;
+}
+
+// Example usage:
+var a = 10;
+var b = 50;
+var primes = findPrimes(a, b);
+console.log("Prime numbers between", a, "and", b + ":", primes.join(", "));
