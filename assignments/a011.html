@@ -157,6 +157,23 @@ body {
 }
 
     </style>
+<script>
+
+ 
+
+function validate(){
+    let strmail=document.getElementById("email").value;
+    let strpass=document.getElementById("pwd").value;
+    
+    if(strmail === "john@gmail.com" && strpass === "1234"){
+    lblmessage.innerHTML ="Welcome John";
+}
+    else
+    {
+        lblmessage.innerHTML="Acess denied";
+    }
+
+</script>
   
 </head>
 <body>
@@ -171,6 +188,7 @@ body {
 <div class="main">
     <div class="three">
         <form action="">
+            <p><label id="lblmessage"></label></p>
             <input
             type="text"
             name="email"
@@ -187,7 +205,8 @@ body {
             required
             />
             <br>
-            <input type="submit" value="Login" id="Submit"/>
+            <button oneclick="validate()">Login</button>
+           
         </form>
         <a href="#">Forgotten password?</a>
         <br>
