@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cafe Page</title>
-    <style>
-      * {
+    <style> -->
+      <!-- * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
@@ -151,7 +151,288 @@
           </p>
         </div>
       </div>
-    </div>
+
+  </div>
+ 
   </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+    background-color: #E3E7E8 ;
+}
+.main{
+    width:1000px;
+    margin:auto;
+}
+header{
+    display:grid;
+    grid-template-columns: auto 50px;
+    margin-top: 50px;
+}  
+ .shop{
+    position: relative;
+    text-align: right;
+}
+.shop img{
+    width:40px;
+}
+ .shop span{
+    background-color: rgb(225, 83, 83);
+    border-radius: 50%;
+    color:#fff;
+    position: absolute;
+    top:-5px;
+    left:80%;
+    padding:4px 10px;
+}
+.list{
+    display:grid;
+    grid-template-columns: auto auto auto ;
+    column-gap: 20px;
+    row-gap: 20px;
+    margin-top: 30px;
+}
+ .item{
+    text-align: center;
+    background-color:#d9d7d7 ;
+    padding:35px;
+    border-radius: 5px;   
+}
+.item img{
+    width:90%;
+    height: 220px;
+}
+.item .name{
+    font-weight: 600;
+} 
+.item .price{
+    margin:10px;
+}
+.item button{
+    background-color: rgb(143, 120, 81);
+    color:#fff;
+    width:100%;
+    padding: 7px;
+    height: 28px;
+    border:none;
+    border-radius:5px;
+}
+.Cart{
+    position: fixed;
+    top:0;
+    left: 100%;
+    width: 400px;
+    background-color: #0f0f0e;
+    height: 100%; 
+}
+.active .Cart{
+    left: calc(100% - 400px);
+}
+.active .main{
+   transform: translateX(-300px);
+}
+.Cart h1{
+    color: #d9beaf;
+    font-weight: 100;
+    margin: 0;
+    padding: 0 20px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+.Checkout{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.Checkout div{
+    background-color:rgb(231, 206, 177);
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+.Checkout div:nth-child(2){
+    background-color: #635249;
+    color: #fff;
+}
+.Listcard li{
+    display: grid;
+    grid-template-columns: 100px repeat(3, 1fr);
+    color: #fff;
+    row-gap: 10px;
+}
+.Listcard li div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Listcard li img{
+    width: 70%;
+}
+.Listcard li button{
+    background-color: #fff5;
+    border: none;
+}
+.Listcard .count{
+    margin: 0 10px;
+} 
+footer{
+    background-color: rgb(244, 188, 141);
+    text-align: center;
+    padding:5px;
+    height: 30px;
+    font-size: 15px;
+    margin-top: 5px;
+    color: #512d2d;   
+}
+    </style>
+</head>
+<body>
+    <div class="">
+        <div class="main">
+            <header>
+                <h1 style="text-align: center;"">Coffee Day Menu</h1><br>
+                <h4 style="text-align:center;">Just brewed happiness in the menu!!</h4>
+                <div class="shop">
+                    <img   src="../images/cart.svg" onclick="openCart()">
+                    <span class="quantity">0</span>
+                </div>
+            </header>
+            <div class="list"></div>
+        </div>
+        <div class="Cart">
+            <h1>Your Cart</h1>
+            <ul class="Listcard"></ul>
+            <div class="Checkout">
+                <div class="total">Checkout</div>
+                <div onclick="closeCart()" class="closeCart">Close</div>
+            </div>
+        </div>
+<br>
+        <footer>
+            <p>coffeeday@gmail.com</p>
+        </footer>   
+    </div>
+    <script>     
+let openShopping = document.querySelector('.shop');
+let closeShopping = document.querySelector('.closeCart');
+let list = document.querySelector('.list');
+let listcard = document.querySelector('.Listcard');
+let body = document.querySelector('body');
+let total = document.querySelector('.total');
+let quantity = document.querySelector('.quantity');
+function openCart(){
+    body.classList.add("active");
+}
+function closeCart(){
+    body.classList.remove("active");
+}
+let products=[
+    {
+        id: 1,
+        name: 'Latte',
+        image: '1.png',
+        price: 299
+    },
+    {
+        id: 2,
+        name: 'Cappucinno',
+        image: '2.png',
+        price: 359
+    },
+    {
+        id: 3,
+        name: 'Sandwich',
+        image: '3.png',
+        price: 169
+    },
+    {
+        id: 4,
+        name: 'Novelty',
+        image: '4.png',
+        price: 179
+    },
+    {
+        id: 5,
+        name: 'Iced Tea',
+        image: '5 .jpg',
+        price: 279
+    },
+    {
+        id: 6,
+        name: 'Frappe',
+        image: '6.jpg',
+        price: 259
+    },
+];
+let listCards=[];
+function start(){
+    for(const i in products)
+        {
+            let newDiv = document.createElement('div');
+            newDiv.classList.add('item');
+            value= products[i]
+            newDiv.innerHTML=`<img src="../images/${value.image}">
+                <div class="name">${value.name}</div>
+                <div class="price">${value.price}</div>
+                <button onclick="addToCart(${i})">Add item to cart</button>`;
+            list.append(newDiv);
+        }
+}
+start();
+function addToCart(i){
+    if(listCards[i] == null){
+        listCards[i] = JSON.parse(JSON.stringify(products[i]));
+        listCards[i].quantity = 1;
+    }
+    reloadCard();
+}
+function reloadCard(){
+    listcard.innerHTML = '';
+    let count = 0;
+    let totalPrice = 0;
+    listCards.forEach((value, i)=>{
+        totalPrice = totalPrice + value.price;
+        count = count + value.quantity;
+        if(value != null){
+            let newDiv = document.createElement('li');
+            newDiv.innerHTML = `
+                <div><img src="../images/${value.image}"/></div>
+                <div>${value.name}</div>
+                <div>${value.price.toLocaleString()}</div>
+                <div>
+                    <button onclick="changeQuantity(${i}, ${value.quantity - 1})">-</button>
+                    <div class="count">${value.quantity}</div>
+                    <button onclick="changeQuantity(${i}, ${value.quantity + 1})">+</button>
+                </div>`;
+                listcard.appendChild(newDiv);
+        }
+    })
+    total.innerText = totalPrice.toLocaleString();
+    quantity.innerText = count;
+}
+function changeQuantity(i, quantity){
+    if(quantity == 0){
+        delete listCards[i];
+    }else{
+        listCards[i].quantity = quantity;
+        listCards[i].price = parseInt(quantity) * parseInt(products[i].price);
+    }
+    reloadCard();
+}
+</script>
+</body>
 </html>
-      
