@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Layout Example</title>
+<style>
+    /* Basic reset and general styles */
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        background-color: #f0f0f0;
+    }
+
+    .banner {
+        background-color: #f5a4a4;
+        color: #fff;
+        text-align: center;
+        padding: 10px 0;
+    }
+    .navbar,.footer {
+        background-color: #515151;
+        color: #fff;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .navbar ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .navbar ul li {
+        display: inline;
+        margin: 0 10px;
+    }
+
+    .navbar ul li a {
+        color: #fff;
+        text-decoration: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+
+    .navbar ul li a:hover {
+        background-color: #555;
+    }
+
+    .content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .section {
+        background-color: #fff;
+        margin: 10px;
+        padding: 20px;
+        flex: 1 1 30%; /* Adjust as needed */
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .section img {
+        max-width: 100%; /* Ensure images don't exceed container width */
+        height: auto; /* Maintain aspect ratio */
+        margin-bottom: 10px; /* Optional spacing below images */
+    }
+
+    .red {
+        background-color: #e3e3e3;
+        height: 600px; /* Adjust height as needed */
+    }
+
+    .blue {
+        background-color: #e3e3e3;
+        height: 600px; /* Adjust height as needed */
+    }
+
+    .green {
+        background-color: #e3e3e3;
+        height: 600px; /* Adjust height as needed */
+    }
+
+    .advertisement {
+        background-color: #fff;
+        margin: 10px;
+        padding: 20px;
+        flex: 1 1 30%; /* Adjust as needed */
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .advertisement img {
+        max-width: 100%; /* Ensure advertisement image fits container */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+    }
+
+    /* Media Queries for responsiveness */
+    @media (max-width: 1000px) {
+        .content {
+            flex-direction: column;
+        }
+        .section, .advertisement {
+            flex: 1 1 100%; /* Full width for smaller screens */
+        }
+    }
+
+    @media (max-width: 600px) {
+        .banner, .navbar, .footer {
+            font-size: 14px; /* Adjust font size for smaller screens */
+        }
+    }
+</style>
+</head>
+<body>
+
+<header class="banner">
+    <h1>My Website Banner</h1>
+    <!-- Add any additional content or navigation here -->
+</header>
+
+<nav class="navbar">
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</nav>
+
+<main class="content">
+    <section class="red section">
+       
+        <img src="../images/12.png" alt="Red Block Image">
+        <p>
+            French Connection<br>
+            Women Watch Gift Set.</p>
+    </section>
+
+    <section class="blue section">
+    
+        <img src="../images/13.png" alt="Blue Block Image">
+        <p>
+            DressBerry<br>
+            Unisex Blue Butterfly Sunglasses with UV Protected</p>
+    </section>
+
+    <section class="green section">
+        
+        <img src="../images/14.png" alt="Green Block Image">
+        <p>
+            Lapis Bard<br>
+            Ducorium Leather AirPod Pro Case</p>
+    </section>
+
+    <aside class="advertisement">
+        <h2>Advertisement</h2>
+        <img src="../images/advertisement.png" alt="Advertisement Image">
+     
+    </aside>
+</main>
+
+<footer class="footer">
+    <p>&copy; 2024 Your Website. All rights reserved.</p>
+    <!-- Add additional footer content or links here -->
+</footer>
+
+</body>
+</html>
